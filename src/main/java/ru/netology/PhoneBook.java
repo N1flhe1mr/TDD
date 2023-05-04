@@ -20,6 +20,8 @@ public class PhoneBook {
     public String findByName(String name) {
         return contacts.get(name);
     }
+    
+    
 
     public int getPhoneBookSize() {
         return contacts.size();
@@ -27,5 +29,8 @@ public class PhoneBook {
 
     public boolean phoneBookIsEmpty() {
         return contacts.isEmpty();
+    }
+
+    public void printAllNames() {
     }
 }

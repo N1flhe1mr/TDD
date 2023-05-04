@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.*;
 import ru.netology.PhoneBook;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 public class PhoneBookTest {
     PhoneBook phoneBook;
 
@@ -37,5 +40,16 @@ public class PhoneBookTest {
 
         phoneNumber = phoneBook.findByName("llllllll");
         Assertions.assertNull(phoneNumber);
+    }
+
+    @Test
+    public void testPrintAllName(){
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        phoneBook.printAllNames();
+
+        String expectedOutput = "Dima";
+        Assertions.assertEquals(expectedOutput, outContent.toString());
     }
 }
