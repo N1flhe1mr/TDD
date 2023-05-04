@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.*;
 import ru.netology.PhoneBook;
 
-import javax.lang.model.element.Name;
-
 public class PhoneBookTest {
     PhoneBook phoneBook;
 
@@ -17,7 +15,6 @@ public class PhoneBookTest {
         phoneBook = null;
     }
 
-
     @Test
     public void testAdd() {
         Assertions.assertEquals(1, phoneBook.getPhoneBookSize());
@@ -31,5 +28,14 @@ public class PhoneBookTest {
 
         name = phoneBook.findByNumber("11111111");
         Assertions.assertNull(name);
+    }
+
+    @Test
+    public void testFindByName() {
+        String phoneNumber = phoneBook.findByName("Dima");
+        Assertions.assertEquals("+78167122366", phoneNumber);
+
+        phoneNumber = phoneBook.findByName("llllllll");
+        Assertions.assertNull(phoneNumber);
     }
 }

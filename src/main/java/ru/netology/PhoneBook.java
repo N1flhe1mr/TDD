@@ -17,6 +17,10 @@ public class PhoneBook {
         return contactsByPhoneNumber.get(phoneNumber);
     }
 
+    public String findByName(String name) {
+        return null;
+    }
+
     public int getPhoneBookSize() {
         return contacts.size();
     }
