@@ -5,14 +5,16 @@ import java.util.TreeMap;
 
 public class PhoneBook {
     private Map<String, String> contacts = new TreeMap<>();
+    private Map<String, String> contactsByPhoneNumber = new TreeMap<>();
 
     public int add(String name, String phoneNumber) {
         contacts.put(name, phoneNumber);
+        contactsByPhoneNumber.put(phoneNumber, name);
         return contacts.size();
     }
 
     public String findByNumber(String phoneNumber) {
-        return null;
+        return contactsByPhoneNumber.get(phoneNumber);
     }
 
     public int getPhoneBookSize() {
@@ -22,6 +24,4 @@ public class PhoneBook {
     public boolean phoneBookIsEmpty() {
         return contacts.isEmpty();
     }
-
-
 }
