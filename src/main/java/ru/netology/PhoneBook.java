@@ -7,7 +7,8 @@ public class PhoneBook {
     private Map<String, String> contacts = new TreeMap<>();
 
     public int add(String name, String phoneNumber) {
-        return 0;
+        contacts.put(name, phoneNumber);
+        return contacts.size();
     }
 
     public int getPhoneBookSize() {
