@@ -20,8 +20,6 @@ public class PhoneBook {
     public String findByName(String name) {
         return contacts.get(name);
     }
-    
-    
 
     public int getPhoneBookSize() {
         return contacts.size();
@@ -32,5 +30,8 @@ public class PhoneBook {
     }
 
     public void printAllNames() {
+        for (String name : contacts.keySet()) {
+            System.out.println(name);
+        }
     }
 }

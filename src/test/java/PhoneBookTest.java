@@ -43,13 +43,13 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void testPrintAllName(){
+    public void testPrintAllName() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
         phoneBook.printAllNames();
 
-        String expectedOutput = "Dima";
+        String expectedOutput = "Dima\r\n";
         Assertions.assertEquals(expectedOutput, outContent.toString());
     }
 }
